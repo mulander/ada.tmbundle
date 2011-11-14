@@ -9,10 +9,6 @@
 		<string>adb</string>
 		<string>ads</string>
 	</array>
-	<key>foldingStartMarker</key>
-	<string>\b(?i:(procedure|package|function|task|type|loop))\b</string>
-	<key>foldingStopMarker</key>
-	<string>\b(?i:(end))\b</string>
 	<key>keyEquivalent</key>
 	<string>^~A</string>
 	<key>name</key>
