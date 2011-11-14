@@ -58,6 +58,22 @@
 			<key>name</key>
 			<string>meta.function.ada</string>
 		</dict>
+
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.ada</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>\b((?i:(end))\s*(\s+(?i:if|loop|record|case|select)\s*));</string>
+			<key>name</key>
+			<string>meta.function.ada</string>
+		</dict>
+
 		<dict>
 			<key>captures</key>
 			<dict>
