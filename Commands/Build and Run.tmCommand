@@ -5,7 +5,8 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>#require_cmd gnatmake 'The GNAT Ada build system is available for free at&lt;a href="http://www.macada.org/macada/Downloads.html"&gt;macada.org&lt;/a&gt;.'
+	<string>#!/usr/bin/env bash
+[[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
 
 #cd "$TM_DIRECTORY"
 #gnatmake "$TM_FILENAME"
@@ -23,7 +24,7 @@
 html_header "Compiling “${TM_FILENAME}”…"
 
 cd "$TM_DIRECTORY"
-gnatmake "$TM_FILENAME" &amp;&gt; &gt;(ruby -rtm_parser -eTextMate.parse_errors)
+"${TM_GNATMAKE:-gnatmake}"gnatmake "$TM_FILENAME" &amp;&gt; &gt;(ruby -rtm_parser -eTextMate.parse_errors)
 if (($? &gt;= 1)); then exit; fi
 
 { "./${TM_FILENAME%.adb}"
@@ -41,15 +42,37 @@ html_footer
 </string>
 	<key>input</key>
 	<string>selection</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>keyEquivalent</key>
 	<string>@r</string>
 	<key>name</key>
 	<string>Build and Run</string>
-	<key>output</key>
-	<string>showAsHTML</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>html</string>
+	<key>outputLocation</key>
+	<string>newWindow</string>
+	<key>requiredCommands</key>
+	<array>
+		<dict>
+			<key>command</key>
+			<string>gnatmake</string>
+			<key>locations</key>
+			<array>
+				<string>/usr/local/ada-4.2/bin/gnatmake</string>
+				<string>/usr/local/ada-4.3/bin/gnatmake</string>
+			</array>
+			<key>variable</key>
+			<string>TM_GNATMAKE</string>
+		</dict>
+	</array>
 	<key>scope</key>
 	<string>source.ada</string>
 	<key>uuid</key>
 	<string>97B21BF7-073D-4070-850C-DD8761B18DBC</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>
