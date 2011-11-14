@@ -115,6 +115,12 @@
 			<string>constant.numeric.ada</string>
 		</dict>
 		<dict>
+			<key>match</key>
+			<string>'.'</string>
+			<key>name</key>
+			<string>string.quoted.single.ada</string>
+		</dict>
+		<dict>
 			<key>begin</key>
 			<string>"</string>
 			<key>beginCaptures</key>
