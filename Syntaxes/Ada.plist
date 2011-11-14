@@ -148,18 +148,37 @@
 			</array>
 		</dict>
 		<dict>
-			<key>captures</key>
+			<key>begin</key>
+			<string>(^[ \t]+)?(?=--)</string>
+			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.comment.ada</string>
+					<string>punctuation.whitespace.comment.leading.ada</string>
 				</dict>
 			</dict>
-			<key>match</key>
-			<string>(--)(.*)$\n?</string>
-			<key>name</key>
-			<string>comment.line.double-dash.ada</string>
+			<key>end</key>
+			<string>(?!\G)</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>--</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.comment.ada</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\n</string>
+					<key>name</key>
+					<string>comment.line.double-dash.ada</string>
+				</dict>
+			</array>
 		</dict>
 	</array>
 	<key>scopeName</key>
