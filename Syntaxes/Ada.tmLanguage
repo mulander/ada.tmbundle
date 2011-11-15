@@ -20,6 +20,14 @@
 			<string>#comments</string>
 		</dict>
 		<dict>
+			<key>include</key>
+			<string>#strings</string>
+		</dict>
+ 		<dict>
+			<key>include</key>
+			<string>#labels</string>
+		</dict>
+		<dict>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -71,9 +79,14 @@
 					<key>name</key>
 					<string>keyword.other.ada</string>
 				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>entity.other.attribute-name</string>
+				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b((?i:(end))\s*(\s+(?i:if|loop|record|case|select)\s*));</string>
+			<string>\b((?i:(end))\s*(\s+(?i:if|loop|record|case|select)\s*)(\w+)?);</string>
 			<key>name</key>
 			<string>meta.function.ada</string>
 		</dict>
@@ -134,45 +147,6 @@
 			<key>name</key>
 			<string>constant.numeric.ada</string>
 		</dict>
-		<dict>
-			<key>match</key>
-			<string>'.'</string>
-			<key>name</key>
-			<string>string.quoted.single.ada</string>
-		</dict>
-		<dict>
-			<key>begin</key>
-			<string>"</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.string.begin.ada</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>"</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.string.end.ada</string>
-				</dict>
-			</dict>
-			<key>name</key>
-			<string>string.quoted.double.ada</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>\n</string>
-					<key>name</key>
-					<string>invalid.illegal.lf-in-string.ada</string>
-				</dict>
-			</array>
-		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
@@ -193,6 +167,85 @@
 					<string>(--).*$\n?</string>
 					<key>name</key>
 					<string>comment.line.double-dash.ada</string>
+				</dict>
+			</array>
+		</dict>
+		<key>labels</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.other.attribute-name</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>&lt;&lt;(.+)&gt;&gt;</string>
+					<key>name</key>
+					<string>keyword.operator.label.ada</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.other.attribute-name</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^\s*\b(\w+?)\s*:</string>
+					<key>name</key>
+					<string>keyword.operator.label.ada</string>
+				</dict>
+			</array>
+		</dict>
+		<key>strings</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>'.'</string>
+					<key>name</key>
+					<string>string.quoted.single.ada</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>"</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.ada</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>"</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.ada</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>string.quoted.double.ada</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>\n</string>
+							<key>name</key>
+							<string>invalid.illegal.lf-in-string.ada</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>
