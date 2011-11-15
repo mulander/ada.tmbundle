@@ -84,12 +84,12 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>storage.type.function.ada</string>
+					<string>keyword.other.ada</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.function.ada</string>
+					<string>entity.other.attribute-name</string>
 				</dict>
 			</dict>
 			<key>match</key>
