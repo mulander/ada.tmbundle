@@ -1,0 +1,10 @@
+{
+    "cmd": ["gnatmake", "$file"],
+    "file_regex": "*.ad[bs]",
+    "selector": "source.ada",
+
+    "windows":
+    {
+        "cmd": ["gnatmake.exe", "$file"]
+    }
+}
