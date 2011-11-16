@@ -33,7 +33,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>storage.type.function.ada</string>
+					<string>keyword.other.ada</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -52,17 +52,17 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>storage.type.package.ada</string>
+					<string>keyword.other.ada</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.other.body.ada</string>
+					<string>keyword.other.ada</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.type.package.ada</string>
+					<string>entity.other.attribute-name</string>
 				</dict>
 			</dict>
 			<key>match</key>
