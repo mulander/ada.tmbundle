@@ -66,7 +66,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b(?i:(package)(?:\b\s+(body))?)\b\s+(\w+(\.\w+)?|"(?:\+|-|=|\*|/)")</string>
+			<string>\b(?i:(package)(?:\b\s+(body))?)\b\s+(\w+(\.\w+)*|"(?:\+|-|=|\*|/)")</string>
 			<key>name</key>
 			<string>meta.function.ada</string>
 		</dict>
@@ -106,7 +106,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b(?i:(end))\b\s+(\w+(\.\w+)?|"(\+|-|=|\*|/)")\s?;</string>
+			<string>\b(?i:(end))\b\s+(\w+(\.\w+)*|"(\+|-|=|\*|/)")\s?;</string>
 			<key>name</key>
 			<string>meta.function.ada</string>
 		</dict>
@@ -125,7 +125,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b(?i:(with|use))\b\s+(\w+(\.\w+)?)\s?;</string>
+			<string>(^|[\r\n])((?i:((limited[ \t]*)?(private[ \t]*)?with))[ \t]+(\w+(\.\w+)*);[ \t]*)+</string>
 			<key>name</key>
 			<string>meta.function.ada</string>
 		</dict>
@@ -137,13 +137,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:(\=&gt;|abort|else|new|return|abs|elsif|not|reverse|abstract|null|accept|entry|select|access|exception|of|separate|aliased|exit|or|subtype|all|others|and|for|out|tagged|array|function|task|at|terminate|generic|pragma|then|goto|private|type|body|procedure|if|protected|until|case|in|use|constant|is|raise|range|when|declare|limited|record|while|delay|loop|rem|with|delta|renames|digits|mod|requeue|xor|do))\b</string>
+			<string>\b(?i:(\=&gt;|abort|abs|abstract|accept|access|aliased|all|and|array|at|body|case|constant|declare|delay|delta|digits|do|else|elsif|entry|exception|exit|for|function|generic|goto|if|in|interface|is|limited|loop|mod|new|not|null|of|or|others|out|overriding|pragma|private|procedure|protected|raise|range|record|rem|renames|requeue|return|reverse|select|separate|some|subtype|synchronized|tagged|task|terminate|then|type|until|use|when|while|with|xor))\b</string>
 			<key>name</key>
 			<string>keyword.other.ada</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b((0(x|X)[0-9a-fA-F_]*)|(([0-9_]+\.?[0-9_]*)|(\.[0-9_]+))((e|E)(\+|-)?[0-9_]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\b</string>
+			<string>\b(?i:([0-9](_?[0-9])*((#[0-9a-f](_?[0-9a-f])*#((e(\+|-)?[0-9](_?[0-9])*\b)|\B))|((\.[0-9](_?[0-9])*)?(e(\+|-)?[0-9](_?[0-9])*)?\b))))</string>
 			<key>name</key>
 			<string>constant.numeric.ada</string>
 		</dict>

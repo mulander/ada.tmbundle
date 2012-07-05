@@ -9,7 +9,9 @@
 	<key>settings</key>
 	<dict>
 		<key>increaseIndentPattern</key>
-		<string>\b(?i:(loop|declare|begin|exception|when|procedure|for|if|else|task|type|package))\b</string>
+		<string>\b(?i:(loop|declare|begin|exception|when|is[^;]*$|then|else|task))\b</string>
+		<key>decreaseIndentPattern</key>
+		<string>\b(begin|end)\b</string>
 		<key>foldingStartMarker</key>
 		<string>\b(?i:(procedure|package|function|task|type|loop))\b</string>
 		<key>foldingStopMarker</key>
